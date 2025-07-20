@@ -1,0 +1,25 @@
+{
+  "name": "expressjs",
+  "version": "1.0.0",
+  "description": "learning express.js concepts",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --env-file=.env --watch express_server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikhil-kamboj420/Express.JS-by-Nikhil.git"
+  },
+  "author": "Nikhil Kamboj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikhil-kamboj420/Express.JS-by-Nikhil/issues"
+  },
+  "homepage": "https://github.com/nikhil-kamboj420/Express.JS-by-Nikhil#readme",
+  "dependencies": {
+    "express": "^5.0.0"
+  }
+  }
+

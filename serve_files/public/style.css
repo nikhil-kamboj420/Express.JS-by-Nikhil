@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: #111;
+    color: #fff;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-family: eonik;
+    gap: 1rem;
+
+    h1{
+        font-size: 5rem;
+        font-weight: 700;
+    }
+    h2{
+        font-size: 4rem;
+        color: cyan;
+    }
+    img{
+        max-width: 40vw;
+        height: 40vh;
+        border-radius: 0% 60% 0% 60%;
+    }
+    button  {
+        padding: 1rem  4.3rem;
+        background-color: #fff;
+        color: #111;
+        font-size: 1.5rem;
+        font-weight: 500;
+       border-radius: 1rem;
+    }
+}

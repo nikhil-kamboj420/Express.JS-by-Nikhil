@@ -1,12 +1,13 @@
 import express from "express";
-const app = express();
-app.get("/product", (req, res) => {
-  res.send(
+const router = express.Router();
+router.get("/product-data", (req, res) => {
+try{
+    res.send(//*use this for e.g :- product-data?search=iphone&limit=10
     `<h1>showing the ${req.query.limit} result for  <strong>${req.query.search}</strong></h1>`
-  );
-});
+  )
+}catch(err){
+    console.error("Error processing request:", err);
+    res.status(500).send("Internal Server Error");}
+})
 
-let PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running at ${PORT}`);
-});
+export default router;

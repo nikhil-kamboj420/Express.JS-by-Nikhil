@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Show Products</title>
+    <style>
+      table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #333;
+        padding: 8px 12px;
+        text-align: left;
+      }
+      th {
+        background-color: #f4f4f4;
+      }
+      caption {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+      div {
+        max-width: 50vw;
+        margin: auto;
+        #btn {
+          padding: 12px 33px;
+          border-radius: 50% 20% 40% 10%;
+          background: #111;
+          color: #fff;
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table id="productsTable">
+      <caption>
+        Product List
+      </caption>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price (₹)</th>
+          <th>Category</th>
+          <th>In Stock</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Product rows will be inserted here -->
+      </tbody>
+    </table>
+    <div>
+      <h1>fetch product Data from Backend</h1>
+      <button id="btn">fetch Data</button>
+    </div>
+
+    <script>
+      async function fetchProducts() {
+        try {
+          const response = await fetch("http://localhost:5500/products");
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          const products = await response.json();
+          const tbody = document.querySelector("#productsTable tbody");
+          tbody.innerHTML = "";
+          products.forEach((product) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                        <td>${product.id}</td>
+                        <td>${product.name}</td>
+                        <td>${product.price}</td>
+                        <td>${product.category}</td>
+                        <td>${product.inStock ? "Yes" : "No"}</td>
+                        <td>${product.rating}</td>
+                    `;
+            tbody.appendChild(tr);
+          });
+        } catch (error) {
+          console.error("Failed to fetch products:", error);
+          const tbody = document.querySelector("#productsTable tbody");
+          tbody.innerHTML =
+            '<tr><td colspan="6">Failed to load products.</td></tr>';
+        }
+      }
+
+      document.getElementById("btn").addEventListener("click", fetchProducts);
+    </script>
+  </body>
+</html>

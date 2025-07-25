@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/nikhil-kamboj420/Express.JS-by-Nikhil#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.0.0"
   }
-  }
-
+}

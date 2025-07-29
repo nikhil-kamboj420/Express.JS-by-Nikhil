@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Wireless Headphones",
+    "price": 2999,
+    "category": "Electronics",
+    "inStock": true,
+    "rating": 4.5
+  },
+  {
+    "name": "Fitness Smartwatch",
+    "price": 4599,
+    "category": "Wearables",
+    "inStock": true,
+    "rating": 4.2
+  },
+  {
+    "name": "Gaming Mouse",
+    "price": 1499,
+    "category": "Accessories",
+    "inStock": false,
+    "rating": 4.7
+  },
+  {
+    "name": "Bluetooth Speaker",
+    "price": 1999,
+    "category": "Audio",
+    "inStock": true,
+    "rating": 4.3
+  },
+  {
+    "name": "LED Monitor",
+    "price": 8999,
+    "category": "Computer",
+    "inStock": false,
+    "rating": 4.6
+  },
+  {
+    "name": "jumping rope",
+    "price": 499,
+    "category": "fitness",
+    "inStock": true,
+    "rating": 4.1
+  }
+]

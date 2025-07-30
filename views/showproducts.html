@@ -70,10 +70,10 @@
           const products = await response.json();
           const tbody = document.querySelector("#productsTable tbody");
           tbody.innerHTML = "";
-          products.forEach((product) => {
+          products.map((product,index) => {
             const tr = document.createElement("tr");
             tr.innerHTML = `
-                        <td>${product.id}</td>
+                        <td>${product.id = index+1}</td>
                         <td>${product.name}</td>
                         <td>${product.price}</td>
                         <td>${product.category}</td>

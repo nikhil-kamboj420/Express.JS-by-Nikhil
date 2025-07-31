@@ -20,6 +20,9 @@
   "homepage": "https://github.com/nikhil-kamboj420/Express.JS-by-Nikhil#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^5.0.0"
+    "dotenv": "^17.2.1",
+    "express": "^5.0.0",
+    "mongodb": "^6.18.0",
+    "mongoose": "^8.16.5"
   }
 }

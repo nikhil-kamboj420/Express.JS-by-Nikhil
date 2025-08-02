@@ -1,15 +1,15 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
+import path from "path";
+import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export const getRegisterPage = (req, res) => {
-    const file = path.join(`${import.meta.dirname}`, '../views/register.html');
-    res.sendFile(file, (err) => {
-        if (err) {
-            res.status(500).send("Error loading register page: " + err.message);
-        }
-    });
+  const file = path.join(`${import.meta.dirname}`, "../views/register.html");
+  res.sendFile(file, (err) => {
+    if (err) {
+      res.status(500).send("Error loading register page: " + err.message);
+    }
+  });
 };
 
 export const getLoginPage = (req, res) => {
@@ -21,9 +21,10 @@ export const getLoginPage = (req, res) => {
   });
 };
 
-
 export const postLogin = (req, res) => {
-  res.setHeader("Set-Cookie", "isLoggedIn=true; path=/");
+  // res.setHeader("Set-Cookie", "isLoggedIn=false; path=/")
+  res.cookie("isLoggedIn", true);
+  res.cookie.isLoggedIn;
   const file = path.join(__dirname, "../views/login-success.html");
   res.sendFile(file);
 };

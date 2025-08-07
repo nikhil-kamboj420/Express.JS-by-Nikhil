@@ -10,6 +10,7 @@ import productRoute from "../routes/productRoute.js";
 import connectDB from "../mongodb/db_conn.js";
 import authRoute from "../routes/authRoute.js";
 import cookieParser from "cookie-parser";
+import connectSqlDB from "../mysql/db_conn.js";
 const app = express();
 
 // allow CORS for specific origin
@@ -23,6 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files (for CSS/JS if needed)
 app.use(express.static(path.join(process.cwd(), "views")));
 app.use(cookieParser())
+app.use(express.json());
 // Use routes
 app.use("/", dyRouteParam);
 app.use("/", queryParamRouter);
@@ -38,4 +40,5 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-connectDB();
+// connectDB();
+connectSqlDB();

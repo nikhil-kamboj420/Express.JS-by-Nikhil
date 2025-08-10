@@ -118,6 +118,7 @@
             emailInput.value = "";
             passwordInput.value = "";
             alert("Registration successful!");
+            window.location.href = "/login";
           } else {
             const data = await res.json();
             alert("Registration failed: " + data.message || res.statusText);

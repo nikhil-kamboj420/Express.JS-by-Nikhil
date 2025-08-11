@@ -9,4 +9,5 @@ router
   .get(authControllers.getLoginPage)
   .post(authControllers.postLogin);
 
+  router.get('/admin.html',authControllers.showProtectedRoute);
 export default router;

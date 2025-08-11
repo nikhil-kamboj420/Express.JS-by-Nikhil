@@ -1,6 +1,7 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import { UserData } from "../mysql/storeData.js";
+import { loginUser } from "../mysql/storeData.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -33,10 +34,15 @@ export const getLoginPage = (req, res) => {
   });
 };
 
-export const postLogin = (req, res) => {
-  // res.setHeader("Set-Cookie", "isLoggedIn=false; path=/")
-  res.cookie("isLoggedIn", true);
-  res.cookie.isLoggedIn;
-  const file = path.join(__dirname, "../views/login-success.html");
-  res.sendFile(file);
+export const postLogin = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    await loginUser(email, password, res);
+  } catch (err) {
+    console.error("Error in postLogin:", err.message);
+    res.status(500).send("Error Logging user: " + err.message);
+  }
+};
+export const showProtectedRoute = (req, res) => {
+  res.sendFile(path.join(__dirname, "../views/admin.html"));
 };

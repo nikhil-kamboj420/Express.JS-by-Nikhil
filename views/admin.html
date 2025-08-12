@@ -39,6 +39,14 @@
       font-size: 1.2rem;
       opacity: 0.9;
     }
+    button{
+      margin-top: 1rem;
+      border: none;
+      padding: 1.2rem 4rem;
+      background-color: #4e73df;
+      color: rgb(20, 20, 19);
+      font-size: 1.4rem;
+    }
   </style>
 </head>
 
@@ -46,6 +54,16 @@
   <div class="container">
     <h1>Welcome Admin</h1>
     <p>You have successfully logged in.</p>
+     <button id="logoutBtn">Logout</button>
   </div>
+<script>
+document.getElementById("logoutBtn").addEventListener("click", async () => {
+  await fetch("/logout", {
+    method: "POST",
+    credentials: "include"
+  });
+  window.location.href = "/login.html";
+});
+</script>
 </body>
 </html>

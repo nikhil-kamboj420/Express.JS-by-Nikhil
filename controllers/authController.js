@@ -46,3 +46,11 @@ export const postLogin = async (req, res) => {
 export const showProtectedRoute = (req, res) => {
   res.sendFile(path.join(__dirname, "../views/admin.html"));
 };
+export const logoutUser = (req, res) => {
+  res.clearCookie("token", {
+    httpOnly: true,
+    sameSite: "strict",
+    secure: false
+  });
+  res.json({ message: "Logged out" });
+};

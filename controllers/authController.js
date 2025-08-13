@@ -52,5 +52,6 @@ export const logoutUser = (req, res) => {
     sameSite: "strict",
     secure: false
   });
+  console.log("urer logout successful!");
   res.json({ message: "Logged out" });
 };

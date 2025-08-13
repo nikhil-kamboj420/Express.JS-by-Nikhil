@@ -48,6 +48,7 @@ export const loginUser = async (email, password, res) => {
     // 2) Compare password
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
+      console.log("user entered wrong password!")
       return res.status(401).send({ message: "Invalid email or password" });
     }
 
